@@ -22,8 +22,8 @@ To set up this project on your local machine, follow these steps:
 2. **Set up a Virtual Environment (Optional but recommended):**
 
    ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
    ```
 
 3. **Install Dependencies:**
