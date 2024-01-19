@@ -1,0 +1,184 @@
+<!-- pages/templates/pages/home.html -->
+
+{% extends "base.html" %}
+
+{% block page_content %}
+    <form style="max-width: 670px; width: 60%; margin: auto; border: 1px solid rgb(241 245 249); background-color: white; border-radius: 3%; height: 90vh; overflow: hidden;"  id="post-form">
+        <div class="flex px-4 py-4 bg-primary text-white" style="height: 10vh; align-items: center;">
+            <h1>Cancer Prediction</h1>
+        </div>
+        <div class="pt-3" style="height: 72vh;">
+            {% csrf_token %}
+            <div class="mx-3 py-3" style="border: 1px solid rgb(172, 178, 185); border-radius: 7px; height: 100%; overflow-y: auto;">
+                <div class="mb-3" style="display: flex;">
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Age</span>
+                        <input type="number" min="1" max="200" class="form-control" name="age" value="1" required>
+                    </div>    
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Gender</span>
+                        <!-- <input type="number" min="1" max="2" class="form-control" name="gender" value="1" required> -->
+                        <select class="form-select" name="gender" value="1">
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                          </select>
+                    </div>    
+                </div>
+                <div class="mb-3" style="display: flex;">
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Air Pollution</span>
+                        <input type="number" min="1" max="10" class="form-control" name="airPollution" value="1" required>
+                    </div>    
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Alcohol Use</span>
+                        <input type="number" min="1" max="10" class="form-control" name="alcoholUse" value="1" required>
+                    </div>    
+                </div>
+                <div class="mb-3" style="display: flex;">
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Dust Allergy</span>
+                        <input type="number" min="1" max="10" class="form-control" name="dustAllergy" value="1" required>
+                    </div>    
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Occupational Hazards</span>
+                        <input type="number" min="1" max="10" class="form-control" name="occupationalHazar" value="1" required>
+                    </div>    
+                </div>
+                <div class="mb-3" style="display: flex;">
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Genetic Risk</span>
+                        <input type="number" min="1" max="10" class="form-control" name="geneticRisk" value="1" required>
+                    </div>    
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Chronic Lung Disease</span>
+                        <input type="number" min="1" max="10" class="form-control" name="chronicLungDisease" value="1" required>
+                    </div>    
+                </div>
+                <div class="mb-3" style="display: flex;">
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Balanced Diet</span>
+                        <input type="number" min="1" max="10" class="form-control" name="balancedDiet" value="1" required>
+                    </div>    
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Obesity</span>
+                        <input type="number" min="1" max="10" class="form-control" name="obesity" value="1" required>
+                    </div>    
+                </div>
+                <div class="mb-3" style="display: flex;">
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Smoking</span>
+                        <input type="number" min="1" max="10" class="form-control" name="smoking" value="1" required>
+                    </div>    
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Passive Smoking</span>
+                        <input type="number" min="1" max="10" class="form-control" name="passiveSmoking" value="1" required>
+                    </div>    
+                </div>
+                <div class="mb-3" style="display: flex;" value="1" required>
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Chest Pain</span>
+                        <input type="number" min="1" max="10" class="form-control" name="chestPain" value="1" required>
+                    </div>    
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Coughing Blood</span>
+                        <input type="number" min="1" max="10" class="form-control" name="coughingBlood" value="1" required>
+                    </div>    
+                </div>
+                <div class="mb-3" style="display: flex;">
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Fatigue</span>
+                        <input type="number" min="1" max="10" class="form-control" name="fatigue" value="1" required>
+                    </div>    
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Weight Loss</span>
+                        <input type="number" min="1" max="10" class="form-control" name="weightLoss" value="1" required>
+                    </div>    
+                </div>
+                <div class="mb-3" style="display: flex;">
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Shortness Breath</span>
+                        <input type="number" min="1" max="10" class="form-control" name="shortnessBreath" value="1" required>
+                    </div>    
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Wheezing</span>
+                        <input type="number" min="1" max="10" class="form-control" name="wheezing" value="1" required>
+                    </div>    
+                </div>
+                <div class="mb-3" style="display: flex;">
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Swallowing Difficulty</span>
+                        <input type="number" min="1" max="10" class="form-control" name="swallowingDifficulty" value="1" required>
+                    </div>    
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Clubbing Finger</span>
+                        <input type="number" min="1" max="10" class="form-control" name="clubbingFinger" value="1" required>
+                    </div>    
+                </div>
+                <div class="mb-3" style="display: flex;">
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Frequent Cold</span>
+                        <input type="number" min="1" max="10" class="form-control" name="frequentCold" value="1" required>
+                    </div>    
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Dry Cough</span>
+                        <input type="number" min="1" max="10" class="form-control" name="dryCough" value="1" required>
+                    </div>    
+                </div>
+                <div class="mb-3" style="display: flex;">
+                    <div class="input-group px-2">
+                        <span class="input-group-text" style="width: 190px; display: inline-block; text-align: center;">Snoring</span>
+                        <input type="number" min="1" max="10" class="form-control" name="snoring" value="1" required>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <div class="px-3" style="height: 8vh; display: flex; flex-direction: row-reverse; align-items: center;">
+            <button type="submit" class="btn btn-primary mx-2" style="width: 50%;">Submit</button>
+        </div>
+    </form>
+    <div class="modal" id="myModal" style="background-color: rgba(0,0,0,0.4);text-align: center;">
+        <div style="position: absolute;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);text-align: center;">
+            <div class="spinner-border text-white" style="width: 100px; height: 100px;"></div>
+            <h1 class="text-white">Processing...</h1>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            console.log("why");
+            $('#reset').click(function(event){
+                console.log("welcome");
+            })
+            $('#btn-close').click(() => {
+                $('#myModal').hide()
+            })
+            $("#post-form").submit(function (event) {
+                event.preventDefault();
+                $('#myModal').show()
+                console.log( $('#post-form').serialize() )
+                $.ajax({
+                    url: "http://localhost:8000/predict",
+                    type: "POST",
+                    data: $('#post-form').serialize(),
+                    success: (resp) => {
+                        
+                        var link = document.createElement("a");
+                        console.log(resp)
+                        link.href = resp.file;
+                        link.download = "filename.pt";
+
+                        // Append the link to the document and trigger a click to start the download
+                        document.body.appendChild(link);
+                        link.click();
+
+                        // Remove the link from the document
+                        document.body.removeChild(link);
+                        $('#myModal').hide()
+                    },
+                }); // end ajax
+
+                // $.post('http://localhost:8000/predict', $('#post-form').serialize(), (resp) => {console.log(resp)})
+            });
+            
+        });
+    </script>
+{% endblock page_content %}
