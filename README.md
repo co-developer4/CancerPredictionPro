@@ -15,8 +15,8 @@ To set up this project on your local machine, follow these steps:
 1. **Clone the Repository:**
 
    ```
-   git clone https://github.com/co-developer4/cancer-ann.git
-   cd cancer-ann
+   git clone https://github.com/co-developer4/CancerPredictionPro.git
+   cd CancerPredictionPro
    ```
 
 2. **Set up a Virtual Environment (Optional but recommended):**
