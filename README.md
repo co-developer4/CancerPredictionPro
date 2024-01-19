@@ -52,4 +52,4 @@ After starting the server, you can:
 
 - Navigate to the main page to input the required data for prediction.
 - Submit the data to get an immediate risk assessment.
-- Download the trained ANN model by clicking the provided link.
+- And then you will get a file from server. But it takes a few seconds.
