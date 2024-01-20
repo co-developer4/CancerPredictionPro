@@ -134,6 +134,10 @@
         </div>
         <div class="px-3" style="height: 8vh; display: flex; flex-direction: row-reverse; align-items: center;">
             <button type="submit" class="btn btn-primary mx-2" style="width: 50%;">Submit</button>
+            <div class="input-group px-2 width: 50%">
+                <span class="input-group-text" style="width: 140px; display: inline-block; text-align: center;">Prediction</span>
+                <input type="text" class="form-control" id='result' value="0" required>
+            </div>    
         </div>
     </form>
     <div class="modal" id="myModal" style="background-color: rgba(0,0,0,0.4);text-align: center;">
@@ -144,10 +148,6 @@
     </div>
     <script>
         $(document).ready(function () {
-            console.log("why");
-            $('#reset').click(function(event){
-                console.log("welcome");
-            })
             $('#btn-close').click(() => {
                 $('#myModal').hide()
             })
@@ -156,22 +156,11 @@
                 $('#myModal').show()
                 console.log( $('#post-form').serialize() )
                 $.ajax({
-                    url: "http://localhost:8000/predict",
+                    url: "http://127.0.0.1:8000/predict",
                     type: "POST",
                     data: $('#post-form').serialize(),
                     success: (resp) => {
-                        
-                        var link = document.createElement("a");
-                        console.log(resp)
-                        link.href = resp.file;
-                        link.download = "filename.pt";
-
-                        // Append the link to the document and trigger a click to start the download
-                        document.body.appendChild(link);
-                        link.click();
-
-                        // Remove the link from the document
-                        document.body.removeChild(link);
+                        $('#result').val(resp.data)
                         $('#myModal').hide()
                     },
                 }); // end ajax

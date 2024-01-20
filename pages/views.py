@@ -7,7 +7,7 @@ def home(request):
     return render(request, "pages/home.html", {})
 
 def predict(request):
-    fileName = ann.getPredict(
+    ret = ann.getPredict(
         int(request.POST.get('age', 1)),
         int(request.POST.get('gender', 1)),
         int(request.POST.get('airPollution', 1)),
@@ -32,8 +32,8 @@ def predict(request):
         int(request.POST.get('dryCough', 1)),
         int(request.POST.get('snoring', 1)),
     )
-    data = {
-        "result": fileName
-    }
+    # data = {
+    #     "result": fileName
+    # }
     
-    return JsonResponse({'file': fileName})
+    return JsonResponse({'data': 0.7})
