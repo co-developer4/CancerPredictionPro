@@ -36,4 +36,4 @@ def predict(request):
     #     "result": fileName
     # }
     
-    return JsonResponse({'data': 0.7})
+    return JsonResponse({'data': ret})
