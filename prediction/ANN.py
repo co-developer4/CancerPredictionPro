@@ -37,4 +37,6 @@ def getPredict( age, gender, airPollution, alcoholUse, dustAllergy, occupational
     print(Prediction)
     print(Prediction.item())
     result = ["Low", "Medium", "High"]
+    # choose one among following return values
     return result[ Prediction.item() ]
+    return cancer_probability
