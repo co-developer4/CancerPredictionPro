@@ -31,7 +31,7 @@ def getPredict( age, gender, airPollution, alcoholUse, dustAllergy, occupational
     Probabilities = nn.functional.softmax(Model_Prediction, dim=1)
     Prediction = torch.argmax(Probabilities, dim=1)
     
-    cancer_probability = Probabilities[:, 1].item()  # Extracting the cancer probability
+    cancer_probability = Probabilities[:, 2].item()  # Extracting the cancer probability
     print(Model_Prediction)
     print(Probabilities)
     print(Prediction)
