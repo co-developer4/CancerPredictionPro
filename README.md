@@ -52,4 +52,4 @@ After starting the server, you can:
 
 - Navigate to the main page to input the required data for prediction.
 - Submit the data to get an immediate risk assessment.
-- And then you will get a file from server. But it takes a few seconds.
+- And then you will get a prediction about input data from server.
